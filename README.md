@@ -42,21 +42,29 @@ npm install
 
 ### 2. 환경 변수 설정 (.env)
 루트 경로에 `.env` 파일을 생성하고 아래 내용을 입력해주세요.
-(`example.env` 파일을 참고하셔도 됩니다.)
+(`.env.example` 파일을 참고하셔도 됩니다.)
 
-> **Note**: 편의상 `example.env`에 기본값들을 기재해두었습니다.
+> **Note**: 편의상 `.env.example`에 기본값들을 기재해두었습니다.
 
 ```
 env
 DB_HOST=localhost
 DB_PORT=3306
 DB_USERNAME=root
-DB_PASSWORD=0000        
+DB_PASSWORD=your_password
 DB_DATABASE=fetching1
-JWT_SECRET=secretKey    
+JWT_SECRET=your_jwt_secret
+PORT=3000
 ```
 
-### 3. 서버 실행
+### 3. 예시 데이터 생성 (SQL)
+서버를 실행하면 `synchronize: true` 옵션에 의해 테이블은 자동으로 생성되지만, 데이터는 비어있습니다.
+테스트를 위해 `lib/example.sql` 파일의 쿼리를 MySQL 클라이언트(Workbench, DBeaver, or CLI)에서 실행하여 예시 데이터를 넣어주세요.
+
+> **Note**: `example.sql`은 테이블 생성(`CREATE`)과 데이터 삽입(`INSERT`)을 모두 포함하고 있습니다. 최초 실행 시 유용합니다.
+
+### 4. 서버 실행
+
 ```
 bash
 npm run start
